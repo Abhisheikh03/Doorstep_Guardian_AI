@@ -1,0 +1,24 @@
+{
+  "event_id": "ring-evt-20261024-001",
+  "device_id": "ring-doorbell-pro-front",
+  "device_name": "Front Door Video Doorbell Pro",
+  "event_type": "package_delivered",
+  "source": "mock",
+  "timestamp": "2026-10-24T14:32:00Z",
+  "description": "Package delivery detected on front doorstep mat",
+  "snapshot_url": "/mock-ring-porch.svg",
+  "metadata": {
+    "carrier": "Amazon Logistics",
+    "package_count": 1,
+    "package_size": "medium",
+    "motion_detected": true,
+    "confidence_score": 0.96,
+    "location_zone": "Front Doorstep"
+  },
+  "household_context": {
+    "resident_away": true,
+    "matched_rule_id": "rule-pkg-away-followup",
+    "rule_title": "Unattended Porch Delivery While Away",
+    "initial_status": "needs_attention"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "household_id": "hh-742-evergreen",
+  "name": "The Miller Residence",
+  "address": "742 Evergreen Terrace, Seattle, WA",
+  "resident_status": {
+    "state": "away",
+    "details": "At office until 5:30 PM",
+    "return_eta": "2026-10-24T17:30:00Z"
+  },
+  "delivery_window": {
+    "expected_start": "2026-10-24T13:00:00Z",
+    "expected_end": "2026-10-24T16:30:00Z",
+    "notes": "Amazon package expected today"
+  },
+  "rules": [
+    {
+      "id": "rule-pkg-away-followup",
+      "name": "Unattended Porch Delivery While Away",
+      "trigger": "package_delivered",
+      "condition": "residents_away == true",
+      "policy": "Unattended deliveries while residents are away require proactive follow-up within 15 minutes to prevent porch vulnerability or weather exposure.",
+      "severity": "attention_needed",
+      "requires_resident_confirmation": true
+    }
+  ],
+  "authorized_members": [
+    {
+      "id": "member-sarah",
+      "name": "Sarah Chen",
+      "relationship": "Trusted Neighbor / Co-resident Contact",
+      "permissions": ["package_retrieval", "in-person_check"]
+    }
+  ],
+  "confirmation_policy": {
+    "require_explicit_confirmation": true,
+    "principle": "An alert or notification is not a resolution. Follow-up remains pending until resident or authorized household member confirms physical collection or safe storage."
+  }
+}
